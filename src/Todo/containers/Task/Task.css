@@ -1,0 +1,28 @@
+.task {
+  position: relative;
+  width: 100%;
+  animation: fadeInLeft .5s .5s both;
+  overflow: hidden;
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.task .task__close-btn {
+  position: absolute;
+  right: 0;
+  font-family: monospace;
+  color: red;
+}
+
+.task__toggle-btn {
+  position: absolute;
+  left: 0;
+  font-family: monospace;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(50px,0,0)
+  }
+}
