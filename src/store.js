@@ -2,8 +2,10 @@ import createHistory from 'history/createBrowserHistory';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+//FOR COMBINE
 import { reduser as todoState } from './Todo'
 import { reduser as modalState } from './Modal'
+
 export const history = createHistory()
 
 const initialState = {}
