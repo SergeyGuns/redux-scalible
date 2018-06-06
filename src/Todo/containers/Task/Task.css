@@ -3,19 +3,27 @@
   width: 100%;
   animation: fadeInLeft .5s .5s both;
   overflow: hidden;
-  padding: 0 60px;
+  padding: 0 120px 0 80px;
   box-sizing: border-box;
 }
 
 .task .task__close-btn {
   position: absolute;
+  top: 0;
   right: 0;
   font-family: monospace;
   color: red;
 }
+.task .task__show-modal-btn {
+  position: absolute;
+  top: -4px;
+  right: 45px;
+  font-family: monospace;
+}
 
 .task__toggle-btn {
   position: absolute;
+  top: -4px;
   left: 0;
   font-family: monospace;
 }

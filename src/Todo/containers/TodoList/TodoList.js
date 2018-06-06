@@ -8,6 +8,12 @@ import './TodoList.css'
 
 
 function TodoList({ todoList, componentName, inputValue, onInputChange, addTodo }) {
+  const addTodoByEnter = (ev)=> {
+    console.log(ev)
+    if(ev.key === 'Enter') {
+      addTodo()
+    }
+  }
   const taskHeight = 40
   return (
     <div className='todo'>
@@ -18,8 +24,8 @@ function TodoList({ todoList, componentName, inputValue, onInputChange, addTodo 
         key='1'
         style={{ 'top': (taskHeight * todoList.length) + 'px' }} 
         className='todo__input-wrapper'>
-        <input className='todo__input' type='text' onChange={onInputChange} value={inputValue} />
-        <div onClick={addTodo} className='todo__add-btn todo__add-btn--stripe'>ADD</div>
+        <input onKeyPress={addTodoByEnter} className='todo__input' type='text' onChange={onInputChange} value={inputValue} />
+        <div  onClick={addTodo} className='todo__add-btn todo__add-btn--stripe'>ADD</div>
       </div>
     </div>
   )
