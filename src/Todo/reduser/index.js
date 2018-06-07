@@ -6,6 +6,7 @@ export const ON_INPUT_CHANGE = 'Todo/ON_INPUT_CHANGE'
 const initState = {
   componentName: 'Todo/',
   inputValue: 'text',
+  highlightRequiredField: false,
   todoList: [
     {
       id: 4312342,
@@ -23,17 +24,21 @@ export default (state = initState, action) => {
   const redusers = {
     [ADD_TASK]: () => {
       if (state.inputValue === '') {
-        return state
+        return {
+          ...state,
+          highlightRequiredField: true
+        }
       }
       const newTodoList = state.todoList
       newTodoList.push({
         id: Date.now(),
         text: state.inputValue,
-        checked: false
+        checked: false,
       })
       return {
         ...state,
         inputValue: '',
+        highlightRequiredField: false,
         todoList: JSON.parse(JSON.stringify(newTodoList))
       }
     },

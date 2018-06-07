@@ -4,10 +4,10 @@ import { bindActionCreators } from 'redux';
 import Task from '../Task/Task';
 import { onInputChange, addTodo } from '../../actions'
 import './TodoList.css'
+import cx from 'classnames'
 
 
-
-function TodoList({ todoList, componentName, inputValue, onInputChange, addTodo }) {
+function TodoList({ todoList, componentName, inputValue, onInputChange, addTodo, highlightRequiredField }) {
   const addTodoByEnter = (ev)=> {
     console.log(ev)
     if(ev.key === 'Enter') {
@@ -24,7 +24,7 @@ function TodoList({ todoList, componentName, inputValue, onInputChange, addTodo 
         key='1'
         style={{ 'top': (taskHeight * todoList.length) + 'px' }} 
         className='todo__input-wrapper'>
-        <input onKeyPress={addTodoByEnter} className='todo__input' type='text' onChange={onInputChange} value={inputValue} />
+        <input onKeyPress={addTodoByEnter} className={cx('todo__input', { 'todo__input_required': highlightRequiredField})} type='text' onChange={onInputChange} value={inputValue} />
         <div  onClick={addTodo} className='todo__add-btn todo__add-btn--stripe'>ADD</div>
       </div>
     </div>
@@ -35,7 +35,8 @@ const mapStateToProps = state => {
   console.log(state)
   return {
     todoList: state.todoState.todoList,
-    inputValue: state.todoState.inputValue
+    inputValue: state.todoState.inputValue,
+    highlightRequiredField: state.todoState.highlightRequiredField
   }
 }
 const mapDispatchToProps = dispatch => bindActionCreators({

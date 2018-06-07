@@ -114,10 +114,22 @@
   transition: all .5s;
   width: 100%;
 }
+
 .todo .todo__input:focus {
   background-color: #666;
   color: #fff;
   border: none;
   outline-offset: 0px;
   outline: -webkit-focus-ring-color auto 0px;
+}
+
+.todo .todo__input_required {
+  border: 2px solid red;
+  animation: todo__input_required 2s both;
+}
+
+@keyframes todo__input_required {
+  from {
+    background-color: red;
+  }
 }
