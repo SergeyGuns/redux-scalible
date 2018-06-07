@@ -14,7 +14,7 @@ function TodoList({ todoList, componentName, inputValue, onInputChange, addTodo 
       addTodo()
     }
   }
-  const taskHeight = 40
+  const taskHeight = 38
   return (
     <div className='todo'>
       <div key='0'>

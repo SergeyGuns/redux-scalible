@@ -2,7 +2,7 @@ export const TOGGLE_SHOW_MODAL = 'Modal/TOGGLE_SHOW_MODAL'
 export const SET_MODAL_CHILDREN = 'Modal/SET_MODAL_CHILDREN'
 
 const initState = {
-  isShow:true,
+  isShow: false,
   children: null
 }
 

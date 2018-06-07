@@ -22,6 +22,9 @@ const initState = {
 export default (state = initState, action) => {
   const redusers = {
     [ADD_TASK]: () => {
+      if (state.inputValue === '') {
+        return state
+      }
       const newTodoList = state.todoList
       newTodoList.push({
         id: Date.now(),
