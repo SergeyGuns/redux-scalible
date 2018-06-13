@@ -1,6 +1,6 @@
 import { ADD_TASK, DELETE_TASK, TOGGLE_TASK, ON_INPUT_CHANGE } from '../reduser'
 
-export const addTodo = ev => {
+export const addTodo = () => {
   return dispatch => {
     dispatch({
       type: ADD_TASK
